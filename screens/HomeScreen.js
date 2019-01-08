@@ -51,6 +51,12 @@ export default class HomeScreen extends React.Component {
               <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
             </TouchableOpacity>
           </View>
+
+          <View style={styles.helpContainer}>
+            <TouchableOpacity onPress={this._handlePageLinks} style={styles.helpLink}>
+              <Text style={styles.helpLinkText}>Show links</Text>
+            </TouchableOpacity>
+          </View>
         </ScrollView>
 
         <View style={styles.tabBarInfoContainer}>
@@ -95,6 +101,10 @@ export default class HomeScreen extends React.Component {
     WebBrowser.openBrowserAsync(
       'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
     );
+  };
+
+  _handlePageLinks = () => {
+    this.props.navigation.push('Links')
   };
 }
 
